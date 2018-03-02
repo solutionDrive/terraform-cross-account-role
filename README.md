@@ -31,7 +31,7 @@ module "your_choice_of_name" {
     policy_name = "NameForThePolicy"
     policy_json = "${data.aws_iam_policy_document.s3_list_access.json}"
     role_description = "Role that grants administrative access to the subAccount"
-    role_name = "CrossDevOpsRole"
+    role_name = "NameOfYourRole"
     source_account_id = "${var.solutiondrive_account_id}"
 }
 

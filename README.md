@@ -3,16 +3,16 @@
 This terraform module consists of two submodules. One for the source-account, from which the role will be assumed and 
 one for the target-account, in which the role has to exist.
 
-To avoid problems with terraform when using multiple providers with different credentials, we split up the module on per
-account basis.
+Usually the terraform code of both accounts will reside in different projects/folders. Also to avoid problems with 
+terraform when using multiple providers with different credentials, we split up the module on per account basis.
 
 ## Usage
 To be able to assume a role in a target-account form a source-account, on both sides some resources have to exist.
 For both sides we created a submodule residing in the folders ```source_account``` and ```target_account```.
 
 ### Target Account
-The source-account is the account where your user exists with which you want to assume a role in the target-account.
-Usually the terraform code of both accounts will reside in different projects/folders.
+The target-account is the account where your role exists which will be assumed by a group-member in the 
+source-account.
 
 #### Variables
 - ```policy_name```: Name of the policy that will be created

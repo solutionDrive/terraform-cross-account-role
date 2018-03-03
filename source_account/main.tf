@@ -1,19 +1,7 @@
 resource "aws_iam_policy" "assume_devops_policy" {
   name = "Assume${var.role_name}"
   description = "Assume ${var.role_name} in ${var.account_name} account"
-  policy = "${data.aws_iam_policy_document.assume_devops_policy.json}"
-}
-
-data "aws_iam_policy_document" "assume_devops_policy" {
-  statement {
-    effect = "Allow"
-    actions = [
-      "sts:AssumeRole"
-    ]
-    resources = [
-      "${var.role_arn_in_target_account}"
-    ]
-  }
+  policy = "${var.assume_policy}"
 }
 
 resource "aws_iam_policy_attachment" "attach_devops_policy_to_groups" {

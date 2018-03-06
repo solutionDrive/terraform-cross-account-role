@@ -13,7 +13,7 @@ resource "aws_iam_role_policy_attachment" "cross_account_policy_attachment" {
   role = "${aws_iam_role.cross_account_role.id}"
 }
 
-data "aws_iam_policy_document" "cross_account_assume_role_policy" {
+data "aws_iam_policy_document" "cross_account_assume_role_policy_document" {
   "statement" {
     effect = "Allow"
     actions = [

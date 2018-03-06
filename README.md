@@ -35,7 +35,7 @@ module "your_choice_of_name" {
     source_account_id = "${var.solutiondrive_account_id}"
 }
 
-data "aws_iam_policy_document" "s3_list_access" {
+data "aws_iam_policy_document" "s3_list_access_policy_document" {
   statement {
     effect = "Allow"
     actions = [

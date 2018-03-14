@@ -5,7 +5,7 @@ resource "aws_iam_policy" "cross_account_policy" {
 
 resource "aws_iam_role" "cross_account_role" {
   name = "${var.role_name}"
-  assume_role_policy = "${data.aws_iam_policy_document.cross_account_assume_role_policy.json}"
+  assume_role_policy = "${data.aws_iam_policy_document.cross_account_assume_role_policy_document.json}"
 }
 
 resource "aws_iam_role_policy_attachment" "cross_account_policy_attachment" {

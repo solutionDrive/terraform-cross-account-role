@@ -24,7 +24,13 @@ data "aws_iam_policy_document" "cross_account_assume_role_policy_document" {
         "arn:aws:iam::${var.source_account_id}:root"
       ]
       type = "AWS"
-    },
+    }
+  },
+  statement {
+    effect = "Allow"
+    actions = [
+      "sts:AssumeRole"
+    ]
     principals {
       identifiers = "${var.assume_account_arns}"
       type = "AWS"
